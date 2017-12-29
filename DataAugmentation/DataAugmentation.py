@@ -66,5 +66,5 @@ if __name__ == '__main__':
         aug.rotate(angle, False, false_file_name)
         aug.rotate(angle, True, true_file_name)
 
-    aug.expand()
     aug.move()
+    aug.expand()
