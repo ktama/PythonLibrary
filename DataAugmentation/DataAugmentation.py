@@ -128,6 +128,29 @@ class DataAugmentation:
         skimage.io.imsave(file_name,cutout_image)
         return cutout_image
 
+    def erasing(self,input_image,mask_size_range=(0.02, 0.4), aspect_range=(0.3, 3),file_name='erasing_image.bmp'):
+        erasing_image = np.copy(input_image)
+        mask_value = np.random.randint(0, 256)
+
+        h, w, _ = erasing_image.shape
+        mask_area = np.random.randint(h*w*mask_size_range[0], h*w*mask_size_range[1])
+        mask_aspect_ratio = np.random.rand() * aspect_range[1] + aspect_range[0]
+
+        mask_height = int(np.sqrt(mask_area / mask_aspect_ratio))
+        if mask_height > h - 1:
+            mask_height = h - 1
+        mask_width = int(mask_aspect_ratio * mask_height)
+        if mask_width > w - 1:
+            mask_width = w - 1
+        
+        top = np.random.randint(0, h - mask_height)
+        left = np.random.randint(0, w - mask_width)
+        bottom = top + mask_height
+        right = left + mask_width
+        erasing_image[top:bottom, left:right, :].fill(mask_value)
+        skimage.io.imsave(file_name,erasing_image)
+        return erasing_image
+
 if __name__ == '__main__':
     aug = DataAugmentation()
     # aug.resize(input_image=aug.raw_image,size=(100,100))
@@ -146,14 +169,16 @@ if __name__ == '__main__':
 
     # aug.horizontal_flip(input_image=aug.raw_image)
     # aug.vertical_flip(input_image=aug.raw_image)
-    for i in range(10):
+    # for i in range(10):
         # crop_name = 'random_crop' + str(i) + '_image.bmp'
         # aug.random_crop(input_image=aug.raw_image,file_name=crop_name)
         # scale_crop_name = 'scale_random_crop' + str(i) + '_image.bmp'
         # aug.scale_random_crop(input_image=aug.raw_image,file_name=scale_crop_name)
         # rotation_random_name = 'rotation_random_crop' + str(i) + '_image.bmp'
         # aug.random_rotation(input_image=aug.raw_image,file_name=rotation_random_name)
-        # cutout_name = 'cutout_name' + str(i) + '_image.bmp'
+        # cutout_name = 'cutout' + str(i) + '_image.bmp'
         # aug.cutout(input_image=aug.raw_image,file_name=cutout_name)
+        # erase_name = 'erase' + str(i) + '_image.bmp'
+        # aug.erasing(input_image=aug.raw_image,file_name=erase_name)
 
 
