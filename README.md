@@ -13,4 +13,4 @@ Pythonのライブラリ
 [kumilog.train || NumPyでの画像のData Augmentationまとめ](http://xkumiyu.hatenablog.com/entry/numpy-data-augmentation)
 
 
-[Qiita || ](https://qiita.com/bohemian916/items/9630661cd5292240f8c7)
+[Qiita || 機械学習のデータセット画像枚数を増やす方法](https://qiita.com/bohemian916/items/9630661cd5292240f8c7)

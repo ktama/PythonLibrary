@@ -177,39 +177,39 @@ class DataAugmentation:
 
 if __name__ == '__main__':
     aug = DataAugmentation()
-    # aug.resize(input_image=aug.raw_image,size=(100,100))
-    # for i in range(1, 8):
-    #     angle = i * 45
-    #     false_file_name = "rotate"+str(angle)+"F_image.bmp"
-    #     true_file_name = "rotate"+str(angle)+"T_image.bmp"
-    #     aug.rotate(input_image=aug.raw_image,angle=angle, is_resize=False, file_name=false_file_name)
-    #     aug.rotate(input_image=aug.raw_image,angle=angle, is_resize=True, file_name=true_file_name)
+    aug.resize(input_image=aug.raw_image,size=(100,100))
+    for i in range(1, 8):
+        angle = i * 45
+        false_file_name = "rotate"+str(angle)+"F_image.bmp"
+        true_file_name = "rotate"+str(angle)+"T_image.bmp"
+        aug.rotate(input_image=aug.raw_image,angle=angle, is_resize=False, file_name=false_file_name)
+        aug.rotate(input_image=aug.raw_image,angle=angle, is_resize=True, file_name=true_file_name)
 
-    # aug.move(input_image=aug.raw_image)
-    # aug.expand(input_image=aug.raw_image)
+    aug.move(input_image=aug.raw_image)
+    aug.expand(input_image=aug.raw_image)
     # あとで修正
     # aug.bright(input_image=aug.raw_image,0.8,'bright1_image.bmp')
     # aug.bright(input_image=aug.raw_image,1.2,'bright2_image.bmp')
 
-    # aug.horizontal_flip(input_image=aug.raw_image)
-    # aug.vertical_flip(input_image=aug.raw_image)
+    aug.horizontal_flip(input_image=aug.raw_image)
+    aug.vertical_flip(input_image=aug.raw_image)
     for i in range(10):
-        # crop_name = 'random_crop' + str(i) + '_image.bmp'
-        # aug.random_crop(input_image=aug.raw_image,file_name=crop_name)
-        # scale_crop_name = 'scale_random_crop' + str(i) + '_image.bmp'
-        # aug.scale_random_crop(input_image=aug.raw_image,file_name=scale_crop_name)
-        # rotation_random_name = 'rotation_random_crop' + str(i) + '_image.bmp'
-        # aug.random_rotation(input_image=aug.raw_image,file_name=rotation_random_name)
-        # cutout_name = 'cutout' + str(i) + '_image.bmp'
-        # aug.cutout(input_image=aug.raw_image,file_name=cutout_name)
-        # erase_name = 'erase' + str(i) + '_image.bmp'
-        # aug.erasing(input_image=aug.raw_image,file_name=erase_name)
+        crop_name = 'random_crop' + str(i) + '_image.bmp'
+        aug.random_crop(input_image=aug.raw_image,file_name=crop_name)
+        scale_crop_name = 'scale_random_crop' + str(i) + '_image.bmp'
+        aug.scale_random_crop(input_image=aug.raw_image,file_name=scale_crop_name)
+        rotation_random_name = 'rotation_random_crop' + str(i) + '_image.bmp'
+        aug.random_rotation(input_image=aug.raw_image,file_name=rotation_random_name)
+        cutout_name = 'cutout' + str(i) + '_image.bmp'
+        aug.cutout(input_image=aug.raw_image,file_name=cutout_name)
+        erase_name = 'erase' + str(i) + '_image.bmp'
+        aug.erasing(input_image=aug.raw_image,file_name=erase_name)
         # あとで修正
         # gauss_name = 'gauss' + str(i) + '_image.bmp'
         # aug.gauss_noise(input_image=aug.raw_image,file_name=gauss_name)
-        # salt_name = 'salt' + str(i) + '_image.bmp'
-        # aug.salt_noise(input_image=aug.raw_image,file_name=salt_name)
-        # pepper_name = 'pepper' + str(i) + '_image.bmp'
-        # aug.pepper_noise(input_image=aug.raw_image,file_name=pepper_name)
+        salt_name = 'salt' + str(i) + '_image.bmp'
+        aug.salt_noise(input_image=aug.raw_image,file_name=salt_name)
+        pepper_name = 'pepper' + str(i) + '_image.bmp'
+        aug.pepper_noise(input_image=aug.raw_image,file_name=pepper_name)
 
 
