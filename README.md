@@ -1,6 +1,28 @@
 # PythonLibrary
 Pythonのライブラリ
 
+# 設定ファイル検証
+
+[JSON, YAML, ini, TOML ざっくり比較](https://gist.github.com/miyakogi/e8631ce5f7c956db2313)を見ながら、
+下記の設定ファイルを実際に使ってみて比較します。
+
+* [ini](./SettingFile/ini_file.py)
+* [JSON](./SettingFile/json_file.py)
+* [YAML](./SettingFile/yaml_file.py)
+* [TOML](./SettingFile/toml_file.py)
+
+
+
+読み込みを確認する設定値
+
+* コメント
+* 整数
+* 浮動小数点
+* 文字列
+* リストor配列 ※文字列のみ扱えるものは読み込み後処理で処置
+  * 数値のリスト
+  * 文字列のリスト
+
 
 # 参考にしたサイト
 
