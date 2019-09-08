@@ -1,0 +1,18 @@
+
+# 整数および浮動小数点の読み込み
+[number]
+alpha = 1
+beta = 2.3
+
+# 文字列の読み込み
+[text]
+alphabet = "ABC"
+japanese = "あいうえお"
+path = "./text.txt"
+
+# 整数および浮動小数点の読み込み
+[list]
+hoge = [4,5,6]
+piyo = ["x","y","z"]
+
+
